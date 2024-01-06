@@ -1,14 +1,19 @@
 #![no_std]
 #![no_main]
+#![feature(panic_info_message)]
 
+mod console;
 mod lang_items;
+mod sbi;
 use core::arch::global_asm;
 
 global_asm!(include_str!("entry.asm"));
 
 #[no_mangle]
 pub fn rust_main() -> ! {
-    loop {}
+    clear_bss();
+    println!("Hello World!!!");
+    panic!("Shutdown machine!");
 }
 
 fn clear_bss() {
@@ -17,6 +22,6 @@ fn clear_bss() {
         static mut ebss: usize;
     }
     unsafe {
-        (sbss..ebss).for_each(|a| { (a as *mut u8).write_volatile(0) });
+        (sbss..ebss).for_each(|a| (a as *mut u8).write_volatile(0));
     }
 }

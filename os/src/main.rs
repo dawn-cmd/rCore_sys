@@ -4,6 +4,7 @@
 
 mod console;
 mod lang_items;
+mod log;
 mod sbi;
 use core::arch::global_asm;
 
@@ -13,21 +14,8 @@ global_asm!(include_str!("entry.asm"));
 
 #[no_mangle]
 pub fn rust_main() -> ! {
+    log::print_log();
     clear_bss();
-    extern "C" {
-        static mut sdata: usize;
-        static mut edata: usize;
-        static mut srodata: usize;
-        static mut erodata: usize;
-        static mut stext: usize;
-        static mut etext: usize;
-    }
-    unsafe {
-        info!(".text [{:#x}, {:#x})", stext as usize, etext as usize);
-        debug!(".rodata [{:#x}, {:#x})", srodata as usize, erodata as usize);
-        error!(".data [{:#x}, {:#x})", sdata as usize, edata as usize);
-    }
-
     println!("hello world");
     // panic!("Shutdown machine!");
     shutdown(false)

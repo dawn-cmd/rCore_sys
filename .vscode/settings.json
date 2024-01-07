@@ -1,6 +1,12 @@
 {
     "cSpell.words": [
         "ebss",
-        "sbss"
+        "edata",
+        "erodata",
+        "etext",
+        "rodata",
+        "sbss",
+        "srodata",
+        "stext"
     ]
 }

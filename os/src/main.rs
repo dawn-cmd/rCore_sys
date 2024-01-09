@@ -2,6 +2,7 @@
 #![no_main]
 #![feature(panic_info_message)]
 
+#[macro_use]
 mod console;
 mod lang_items;
 mod log;

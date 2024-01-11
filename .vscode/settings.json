@@ -1,12 +1,14 @@
 {
-    "cSpell.words": [
-        "ebss",
-        "edata",
-        "erodata",
-        "etext",
-        "rodata",
-        "sbss",
-        "srodata",
-        "stext"
-    ]
+	"cSpell.words": [
+		"ebss",
+		"edata",
+		"erodata",
+		"etext",
+		"rodata",
+		"sbss",
+		"srodata",
+		"stext"
+	],
+	"rust-analyzer.linkedProjects": ["./os/Cargo.toml", "./os/Cargo.toml"],
+	"rust-analyzer.showUnlinkedFileNotification": false
 }

@@ -2,8 +2,7 @@
 #![no_std]
 #![no_main]
 #![feature(panic_info_message)]
-#[no_mangle]
-#[link_section = ".text.entry"]
+
 #[macro_use]
 pub mod console;
 mod lang_items;
@@ -19,6 +18,8 @@ pub fn exit(exit_code: i32) -> isize {
     sys_exit(exit_code)
 }
 
+#[no_mangle]
+#[link_section = ".text.entry"]
 pub extern "C" fn _start() -> ! {
     clear_bss();
     exit(main());

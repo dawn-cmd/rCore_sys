@@ -23,6 +23,15 @@ lazy_static! {
 }
 
 impl AppManager {
+    fn get_app_info() {
+        Todo!();
+    }
+    fn get_current_app(&self) -> usize {
+        self.current_app
+    }
+    fn move_to_next_app() {
+        Todo!();
+    }
     unsafe fn load_app(&self, app_id: usize) {
         if app_id >= self.num_app {
             panic!("All applications completed!");

@@ -14,4 +14,7 @@ rCore_sys is a Unix-like operating system project based on Rust and RISC-V. It a
 
 ## Updates
 
+- add user mode application, and run on qemu
+- add user mode
 - add colorful console output for INFO, DEBUG, TRACE, ERROR, WARN
+

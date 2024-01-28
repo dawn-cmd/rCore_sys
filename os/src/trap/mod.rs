@@ -5,3 +5,11 @@ pub fn init() {
         stvec::write(__alltraps as usize, TrapMode::Direct);
     }
 }
+
+#[no_mangle]
+pub fn trap_handler(cx: &mut TrapContext) -> &mut TrapContext {
+    let scause = scause::read();
+    let stval = stval::read();
+    match scause.cause() {
+    }
+}

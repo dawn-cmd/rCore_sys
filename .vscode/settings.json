@@ -6,6 +6,7 @@
 		"etext",
 		"rodata",
 		"sbss",
+		"scause",
 		"srodata",
 		"stext",
 		"syscall"

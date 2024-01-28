@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"rust-analyzer.linkedProjects": ["./os/Cargo.toml"],
-		"rust-analyzer.showUnlinkedFileNotification": false
+		"rust-analyzer.showUnlinkedFileNotification": false,
+		"cSpell.words": ["scause"]
 	}
 }

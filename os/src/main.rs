@@ -7,6 +7,11 @@ mod console;
 mod lang_items;
 mod log;
 mod sbi;
+pub mod trap;
+pub mod syscall;
+mod batch;
+pub mod sync;
+pub mod trap;
 use core::arch::global_asm;
 
 use crate::sbi::shutdown;

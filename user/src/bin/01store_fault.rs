@@ -6,6 +6,10 @@ extern crate user_lib;
 
 #[no_mangle]
 pub fn main() -> i32 {
-    println!("Hello world from user mode program!");
+    println!("Into Test store_fault, we will insert an invalid store operation...");
+    println!("Kernel should kill this application!");
+    unsafe {
+        core::ptr::null_mut::<u8>().write_volatile(0);
+    }
     0
 }

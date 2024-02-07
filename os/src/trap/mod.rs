@@ -3,14 +3,13 @@ mod context;
 pub use context::TrapContext;
 use crate::syscall::syscall;
 use crate::batch::run_next_app;
-use core::arch::{asm, global_asm};
+use core::arch::global_asm;
 use riscv::register::{
     mtvec::TrapMode,
-    scause::{self, Exception, Interrupt, Trap},
-    sie, sscratch, sstatus, stval, stvec,
+    scause::{self, Exception, Trap},
+    stval, stvec,
 };
 
-global_asm!(include_str!("trap.S"));
 global_asm!(include_str!("trap.S"));
 pub fn init() {
     extern "C" {fn __alltraps();}

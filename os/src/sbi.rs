@@ -1,3 +1,5 @@
+//! SBI call wrappers
+
 use core::arch::asm;
 
 const SBI_CONSOLE_PUTCHAR: usize = 1;

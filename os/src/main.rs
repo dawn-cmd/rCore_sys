@@ -32,6 +32,7 @@ pub mod batch;
 mod lang_items;
 mod sbi;
 mod sync;
+mod stack_trace;
 pub mod syscall;
 pub mod trap;
 
@@ -55,6 +56,7 @@ fn clear_bss() {
 pub fn rust_main() -> ! {
     clear_bss();
     println!("[kernel] Hello, world!");
+    // panic!("Test");
     trap::init();
     batch::init();
     batch::run_next_app();
